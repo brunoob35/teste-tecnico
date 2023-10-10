@@ -27,8 +27,6 @@ def get_devices_w_points(db):
         device = Device(**device_data)
         devices_list.append(device)
 
-        pprint(devices_list)
-
     for device in devices_list:
 
         point = points_handler.get_point_by_serial(db, device.serialNumber)

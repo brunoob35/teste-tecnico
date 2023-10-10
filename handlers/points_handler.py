@@ -4,7 +4,9 @@ def get_points(db):
     results = db.points.find()
     points = [{'_id': str(point['_id']),
                 'name': point['name'],
-                'serialNumber': point['serial_number']}
+                'serialNumber': point['serial_number'],
+                'dataType': point['data_type'],
+                'value': point['value']}
                for point in results]
     return jsonify(points)
 
@@ -18,7 +20,9 @@ def get_point_by_id(db, id):
     results = db.points.find({'_id': strId})
     points = [{'_id': str(point['_id']),
                 'name': point['name'],
-                'serialNumber': point['serial_number']}
+                'serialNumber': point['serial_number'],
+                'dataType': point['data_type'],
+                'value': point['value']}
                for point in results]
     return jsonify(points)
 
@@ -26,7 +30,9 @@ def get_point_by_serial(db, serial):
     results = db.points.find({'serial_number': serial})
     points = [{'_id': str(point['_id']),
                 'name': point['name'],
-                'serialNumber': point['serial_number']}
+                'serialNumber': point['serial_number'],
+                'dataType': point['data_type'],
+                'value': point['value']}
                for point in results]
     return jsonify(points)
 
