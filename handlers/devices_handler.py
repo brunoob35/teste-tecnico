@@ -5,13 +5,13 @@ from models.devices_model import Device
 from models.points_model import Point
 from pprint import pprint
 
-def get_devices(db):
-    results = db.devices.find()
-    devices = [{'_id': str(device['_id']),
-                'name': device['name'],
-                'serialNumber': device['serial_number']}
-               for device in results]
-    return jsonify(devices)
+# def get_devices(db):
+#     results = db.devices.find()
+#     devices = [{'_id': str(device['_id']),
+#                 'name': device['name'],
+#                 'serialNumber': device['serial_number']}
+#                for device in results]
+#     return jsonify(devices)
 
 def get_devices_w_points(db):
     devices_cursor = db.devices.find()
