@@ -1,7 +1,11 @@
 # Back-End application using Python and Flask
+This service provides equipment information to a back-end service, connecting the user to a mongoDB database storing the devices, its points and values.
+
 
 ## To run the application simply run the main.py
 It provides the following routes:
+
+
 POST http://localhost:5000/devices 
 
 POST http://localhost:5000/points
